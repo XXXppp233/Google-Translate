@@ -11,8 +11,8 @@ while (1):
 # auto detect language
     try:
         detected_lang = detect(text_to_translate)
-        if detected_lang not in ['zh-cn','zh-tw','zh-hk']:
-            detected_lang = 'en'
+        if detected_lang not in ['en','en-us']:
+            detected_lang = 'zh-cn'
     except Exception as e:
         print(f"fail to detect: {str(e)}")
         exit()
