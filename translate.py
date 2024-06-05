@@ -7,7 +7,7 @@ from langdetect import detect
 translator = Translator()
 while (1):
 # Get user input
-    text_to_translate = input("input text：")
+    text_to_translate = input("input text: ")
 # auto detect language
     try:
         detected_lang = detect(text_to_translate)
@@ -24,9 +24,9 @@ while (1):
 # running
     try:
         translated = translator.translate(text_to_translate, src=detected_lang, dest=dest_lang)
-        print(f"\nsource language: {detected_lang}")
+        print(f"source language: {detected_lang}")
         print(f"target language: {dest_lang}")
-        print(f"raw: {text_to_translate}")
-        print(f"translation: {translated.text}")
+        print(f"\nraw: {text_to_translate}")
+        print(f"translation: {translated.text}\n")
     except Exception as e:
         print(f"fail to translate: {str(e)}")
