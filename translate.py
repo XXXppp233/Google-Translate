@@ -7,7 +7,11 @@ from langdetect import detect
 translator = Translator()
 while (1):
 # Get user input
-    text_to_translate = input("input text: ")
+    try: 
+        text_to_translate = input("input text: ")
+    except KeyboardInterrupt:
+        print(end = '\r')
+        exit(1)    
 # auto detect language
     try:
         detected_lang = detect(text_to_translate)
